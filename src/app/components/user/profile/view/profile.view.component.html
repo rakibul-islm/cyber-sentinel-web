@@ -1,0 +1,60 @@
+<div class="flex justify-center items-start font-[sans-serif] h-full min-h-screen p-4">
+  <div class="max-w-4xl w-full mx-auto">
+    <form 
+      class="bg-opacity-60 bg-white rounded p-6 shadow-[0_2px_16px_-3px_rgba(125,126,131,0.3)] flex flex-col space-y-6">
+      
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-gray-800 text-3xl font-bold">Profile</h3>
+      </div>
+
+      <div class="flex space-x-6">
+        <!-- Profile Image Section -->
+        <div class="flex-shrink-0">
+          <div class="relative w-32 h-32 mb-4 rounded-full overflow-hidden">
+            <img *ngIf="profile.imageBase64" [src]="profile.imageBase64" alt="Profile Image"
+              class="w-full h-full object-cover rounded-full shadow-md">
+            <div *ngIf="!profile.imageBase64"
+              class="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
+              No Image
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Fields -->
+        <div class="flex-1 space-y-4 text-sm text-gray-800">
+          <!-- Full Name -->
+          <input type="text" readonly [(ngModel)]="profile.fullName" name="fullName" placeholder="Full Name"
+            required
+            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
+
+          <!-- Email -->
+          <input type="email" readonly [(ngModel)]="profile.email" name="email" placeholder="Email"
+            required
+            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
+
+          <!-- Address -->
+          <input type="text" readonly [(ngModel)]="profile.address" name="address" placeholder="Address"
+            required
+            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
+
+          <!-- Phone -->
+          <input type="text" readonly [(ngModel)]="profile.phone" name="phone" placeholder="Phone"
+            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
+
+          <!-- Mobile -->
+          <input type="text" readonly [(ngModel)]="profile.mobile" name="mobile" placeholder="Mobile Number"
+            required
+            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
+
+          <!-- Roles -->
+          <input type="text" readonly [(ngModel)]="profile.roles" name="roles" placeholder="Roles"
+            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+  
+  
+  

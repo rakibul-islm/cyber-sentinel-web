@@ -1,0 +1,47 @@
+<div class="min-h-screen bg-gray-100 p-8">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-6">Dashboard</h1>
+      <p class="text-lg text-gray-600 mb-10">
+        Welcome! This dashboard provides tools to help identify vulnerabilities and evaluate password security for educational and testing purposes.
+      </p>
+  
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- SQL Injection Detection -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h2 class="text-xl font-semibold text-blue-700 mb-2">SQL Injection Detection</h2>
+          <p class="text-gray-600 mb-4">
+            Automatically scan URLs with common payloads to detect potential SQL injection vulnerabilities. Useful for testing query parameters.
+          </p>
+          <a routerLink="/sql-injection-detection"
+             class="inline-block px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+            Start Scan →
+          </a>
+        </div>
+  
+        <!-- Password Strength Checker -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h2 class="text-xl font-semibold text-green-700 mb-2">Check Password Strength</h2>
+          <p class="text-gray-600 mb-4">
+            Test if a password is strong enough based on rules like length, uppercase, numbers, and special characters. Get real-time feedback.
+          </p>
+          <a routerLink="/check-password-strength"
+             class="inline-block px-4 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 transition">
+            Test Now →
+          </a>
+        </div>
+  
+        <!-- Password Encryption & Decryption -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h2 class="text-xl font-semibold text-purple-700 mb-2">Password Encryption & Decryption</h2>
+          <p class="text-gray-600 mb-4">
+            Simulate password encryption (Base64) and learn the difference between reversible encoding and one-way hashing (BCrypt).
+          </p>
+          <a routerLink="/password-encode-decode"
+             class="inline-block px-4 py-2 text-sm bg-purple-600 text-white rounded hover:bg-purple-700 transition">
+            Try It →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
