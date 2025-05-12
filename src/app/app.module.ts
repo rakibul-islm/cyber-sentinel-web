@@ -19,6 +19,7 @@ import { AuthInterceptor } from './services/utility/interceptors/auth.intercepto
 import { SqlInjectionDetectionComponent } from './components/vulnerability-scanner/sql-injection-detection/sql.injection.detection.component';
 import { CheckPasswordStrengthComponent } from './components/vulnerability-scanner/check-password-strength/check.password.strength.component';
 import { PasswordEncodeDecodeComponent } from './components/vulnerability-scanner/password-encode-decode/password.encode.decode.component';
+import { ProfileFormComponent } from './components/user/profile/form/profile.form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PasswordEncodeDecodeComponent } from './components/vulnerability-scanne
     DashboardComponent,
     AppHeaderComponent,
     ProfileViewComponent,
+    ProfileFormComponent,
     RegistrationFormComponent,
     ConfirmationDialogComponent,
     SqlInjectionDetectionComponent,

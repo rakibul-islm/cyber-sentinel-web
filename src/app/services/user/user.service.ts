@@ -22,15 +22,14 @@ export class UserService extends BaseService {
     return super.post(API_URLS.CREATE_REGISTER_USER, body);
   }
 
-  // public fetchProfileById(pathParams: PathParameters): Observable<any> {
-  //   const url = this.createUrl(API_URLS.FETCH_PROFILE, pathParams);
-  //   return super.get(url);
-  // }
+  public fetchProfileById(pathParams: PathParameters): Observable<any> {
+    const url = this.createUrl(API_URLS.FETCH_PROFILE_BY_ID, pathParams);
+    return super.get(url);
+  }
 
-  // public updateProfile(pathParams: PathParameters, body: any): Observable<any> {
-  //   const url = this.createUrl(API_URLS.FETCH_PROFILE, pathParams);
-  //   return super.put(url, body);
-  // }
+  public updateProfile(body: any): Observable<any> {
+    return super.put(API_URLS.UPDATE_PROFILE, body);
+  }
 
   // public deleteProfileById(pathParams: PathParameters): Observable<any> {
   //   return super.deleteById(API_URLS.FETCH_PROFILE, pathParams);

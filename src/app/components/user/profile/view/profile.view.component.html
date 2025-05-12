@@ -6,11 +6,15 @@
       <!-- Header -->
       <div class="flex justify-between items-center mb-6">
         <h3 class="text-gray-800 text-3xl font-bold">Profile</h3>
+        <button type="submit" (click)="navigateToProfileForm()"
+          class="px-4 py-2 text-sm font-semibold tracking-wider rounded text-white bg-gray-800 hover:bg-[#222] focus:outline-none">
+          Edit
+        </button>
       </div>
 
       <div class="flex space-x-6">
         <!-- Profile Image Section -->
-        <div class="flex-shrink-0">
+        <div class="flex-shrink-0 pr-20">
           <div class="relative w-32 h-32 mb-4 rounded-full overflow-hidden">
             <img *ngIf="profile.imageBase64" [src]="profile.imageBase64" alt="Profile Image"
               class="w-full h-full object-cover rounded-full shadow-md">
