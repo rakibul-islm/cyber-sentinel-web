@@ -59,7 +59,7 @@ export class RegistrationFormComponent extends BaseComponent implements OnInit {
     const register: Register = this.registerForm.getRawValue();
 
     this.confirmationService.confirm(
-      'Are you sure that you want to perform this action?',
+      'Are you sure you want to proceed?',
       () => {
         this.createRegistration(register);
       },
