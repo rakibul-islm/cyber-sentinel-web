@@ -1,25 +1,26 @@
-<div class="flex justify-center items-start font-[sans-serif] h-full min-h-screen p-4">
-  <div class="max-w-4xl w-full mx-auto">
-    <form 
-      class="bg-opacity-60 bg-white rounded p-6 shadow-[0_2px_16px_-3px_rgba(125,126,131,0.3)] flex flex-col space-y-6">
+<div class="flex justify-center items-start font-[sans-serif] min-h-screen p-4 bg-gray-50">
+  <div class="w-full max-w-4xl mx-auto">
+    <form class="bg-opacity-60 bg-white rounded p-4 sm:p-6 shadow-[0_2px_16px_-3px_rgba(125,126,131,0.3)] flex flex-col space-y-6">
       
       <!-- Header -->
-      <div class="flex justify-between items-center mb-6">
-        <h3 class="text-gray-800 text-3xl font-bold">Profile</h3>
-        <button type="submit" (click)="navigateToProfileForm()"
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-6">
+        <h3 class="text-gray-800 text-2xl sm:text-3xl font-bold">Profile</h3>
+        <button type="button" (click)="navigateToProfileForm()"
           class="px-4 py-2 text-sm font-semibold tracking-wider rounded text-white bg-gray-800 hover:bg-[#222] focus:outline-none">
           Edit
         </button>
       </div>
 
-      <div class="flex space-x-6">
+      <!-- Content Layout -->
+      <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-6 sm:space-y-0">
+        
         <!-- Profile Image Section -->
-        <div class="flex-shrink-0 pr-20">
-          <div class="relative w-32 h-32 mb-4 rounded-full overflow-hidden">
+        <div class="flex-shrink-0 flex justify-center sm:justify-start">
+          <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden">
             <img *ngIf="profile.imageBase64" [src]="profile.imageBase64" alt="Profile Image"
               class="w-full h-full object-cover rounded-full shadow-md">
             <div *ngIf="!profile.imageBase64"
-              class="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
+              class="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-sm">
               No Image
             </div>
           </div>
@@ -27,31 +28,21 @@
 
         <!-- Form Fields -->
         <div class="flex-1 space-y-4 text-sm text-gray-800">
-          <!-- Full Name -->
           <input type="text" readonly [(ngModel)]="profile.fullName" name="fullName" placeholder="Full Name"
-            required
             class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
 
-          <!-- Email -->
           <input type="email" readonly [(ngModel)]="profile.email" name="email" placeholder="Email"
-            required
             class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
 
-          <!-- Address -->
           <input type="text" readonly [(ngModel)]="profile.address" name="address" placeholder="Address"
-            required
             class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
 
-          <!-- Phone -->
+          <input type="text" readonly [(ngModel)]="profile.mobile" name="mobile" placeholder="Mobile Number"
+            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
+          
           <input type="text" readonly [(ngModel)]="profile.phone" name="phone" placeholder="Phone"
             class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
 
-          <!-- Mobile -->
-          <input type="text" readonly [(ngModel)]="profile.mobile" name="mobile" placeholder="Mobile Number"
-            required
-            class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
-
-          <!-- Roles -->
           <input type="text" readonly [(ngModel)]="profile.roles" name="roles" placeholder="Roles"
             class="bg-transparent w-full border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
         </div>
@@ -59,6 +50,3 @@
     </form>
   </div>
 </div>
-  
-  
-  

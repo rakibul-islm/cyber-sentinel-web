@@ -12,6 +12,8 @@ import { AuthService } from '../../services/utility/security/auth.service';
 export class AppHeaderComponent extends BaseComponent implements OnInit {
   isAuthenticated: boolean = false;
   profile: Profile = new Profile();
+  isMenuOpen = false;
+
 
   constructor(
     private authService: AuthService, 

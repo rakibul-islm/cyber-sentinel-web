@@ -1,41 +1,46 @@
-<div class="flex justify-center items-top font-[sans-serif] h-full min-h-screen p-4">
-  <div class="max-w-4xl w-full mx-auto">
-    <form [formGroup]="profileForm" (ngSubmit)="submit()"
-      class="bg-opacity-60 bg-white rounded p-6 shadow-[0_2px_16px_-3px_rgba(125,126,131,0.3)] flex flex-col space-y-6">
-
+<div class="flex justify-center items-start font-[sans-serif] min-h-screen p-4 bg-gray-50">
+  <div class="w-full max-w-4xl mx-auto">
+    <form [formGroup]="profileForm"
+      class="bg-opacity-60 bg-white rounded p-4 sm:p-6 shadow-[0_2px_16px_-3px_rgba(125,126,131,0.3)] flex flex-col space-y-6">
+      
       <!-- Header -->
-      <div class="flex justify-between items-center mb-6">
-        <h3 class="text-gray-800 text-3xl font-bold">Update Profile</h3>
-        <button type="submit"
-          class="px-4 py-2 text-sm font-semibold tracking-wider rounded text-white bg-gray-800 hover:bg-[#222] focus:outline-none">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+        <h3 class="text-gray-800 text-2xl sm:text-3xl font-bold">Update Profile</h3>
+        <button type="submit" (click)="submit()"
+          class="px-4 py-2 text-sm font-semibold tracking-wider rounded text-white bg-gray-800 hover:bg-[#222] focus:outline-none w-full sm:w-auto">
           Save Changes
         </button>
       </div>
 
-      <div class="flex space-x-6">
-        <!-- Profile Image Section (Left Side) -->
-        <div class="flex-shrink-0">
-          <div class="relative w-32 h-32 mb-4 rounded-full overflow-hidden">
-            <img *ngIf="imageBase64" [src]="imageBase64" alt="Profile Image" 
+      <!-- Content Section -->
+      <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-6 sm:space-y-0">
+        
+        <!-- Profile Image Section -->
+        <div class="flex-shrink-0 flex flex-col items-center sm:items-start w-full sm:w-auto">
+          <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4">
+            <img *ngIf="imageBase64" [src]="imageBase64" alt="Profile Image"
               class="w-full h-full object-cover rounded-full shadow-md">
-            <div *ngIf="!imageBase64" class="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
+            <div *ngIf="!imageBase64"
+              class="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-sm">
               No Image
             </div>
           </div>
+
           <input type="file" (change)="onFileChange($event)" accept="image/*"
             class="mt-1 w-full text-sm text-gray-500 file:bg-gray-100 file:border-0 file:px-3 file:py-1.5 file:rounded-md file:cursor-pointer" />
+
           <button *ngIf="imageBase64" type="button" (click)="removeImage()" 
             class="mt-2 text-xs text-red-500 hover:underline">Remove Image</button>
         </div>
 
-        <!-- Input Fields Section (Right Side) -->
+        <!-- Form Fields -->
         <div class="flex-1 space-y-4">
-
+          
           <!-- Full Name -->
           <input type="text" formControlName="fullName" placeholder="Full Name"
             class="bg-transparent w-full text-sm text-gray-800 border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
-          <div *ngIf="profileForm.controls['fullName'].touched && profileForm.controls['fullName'].errors?.['required']" 
-               class="text-red-500 text-xs mt-1">Full name is required.</div>
+          <div *ngIf="profileForm.controls['fullName'].touched && profileForm.controls['fullName'].errors?.['required']"
+            class="text-red-500 text-xs mt-1">Full name is required.</div>
 
           <!-- Username (Readonly) -->
           <input type="text" formControlName="username" placeholder="Username"
@@ -50,36 +55,36 @@
             class="bg-transparent w-full text-sm text-gray-800 border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
           <div *ngIf="profileForm.controls['email'].touched">
             <div *ngIf="profileForm.controls['email'].errors?.['required']" class="text-red-500 text-xs mt-1">
-              Email is required.</div>
+              Email is required.
+            </div>
             <div *ngIf="profileForm.controls['email'].errors?.['email']" class="text-red-500 text-xs mt-1">
-              Enter a valid email.</div>
+              Enter a valid email.
+            </div>
           </div>
 
           <!-- Address -->
           <input type="text" formControlName="address" placeholder="Address"
             class="bg-transparent w-full text-sm text-gray-800 border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
           <div *ngIf="profileForm.controls['address'].touched && profileForm.controls['address'].errors?.['required']"
-               class="text-red-500 text-xs mt-1">Address is required.</div>
+            class="text-red-500 text-xs mt-1">Address is required.</div>
 
           <!-- Mobile -->
           <input type="text" formControlName="mobile" placeholder="Mobile Number"
             class="bg-transparent w-full text-sm text-gray-800 border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
-            <div *ngIf="profileForm.controls['mobile'].touched">
-              <div *ngIf="profileForm.controls['mobile'].errors?.['required']" class="text-red-500 text-xs mt-1">
-                Mobile number is required.</div>
-              <div *ngIf="profileForm.controls['mobile'].errors?.['pattern']" class="text-red-500 text-xs mt-1">
-                Enter a valid mobile number.</div>
-              <div *ngIf="profileForm.controls['mobile'].errors?.['minlength']" class="text-red-500 text-xs mt-1">
-                Mobile number must be 11 digits.</div>
-              <div *ngIf="profileForm.controls['mobile'].errors?.['maxlength']" class="text-red-500 text-xs mt-1">
-                Mobile number must be 11 digits.</div>
-            </div>
+          <div *ngIf="profileForm.controls['mobile'].touched">
+            <div *ngIf="profileForm.controls['mobile'].errors?.['required']" class="text-red-500 text-xs mt-1">
+              Mobile number is required.</div>
+            <div *ngIf="profileForm.controls['mobile'].errors?.['pattern']" class="text-red-500 text-xs mt-1">
+              Enter a valid mobile number.</div>
+            <div *ngIf="profileForm.controls['mobile'].errors?.['minlength']" class="text-red-500 text-xs mt-1">
+              Mobile number must be 11 digits.</div>
+            <div *ngIf="profileForm.controls['mobile'].errors?.['maxlength']" class="text-red-500 text-xs mt-1">
+              Mobile number must be 11 digits.</div>
+          </div>
 
           <!-- Phone -->
           <input type="text" formControlName="phone" placeholder="Phone"
             class="bg-transparent w-full text-sm text-gray-800 border-b border-gray-400 focus:border-gray-800 px-2 py-3 outline-none placeholder:text-gray-800" />
-            <div *ngIf="profileForm.controls['phone'].touched && profileForm.controls['phone'].errors?.['required']" 
-            class="text-red-500 text-xs mt-1">Phone is required.</div>
         </div>
       </div>
     </form>

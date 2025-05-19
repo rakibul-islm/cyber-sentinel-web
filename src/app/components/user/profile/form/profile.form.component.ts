@@ -49,7 +49,7 @@ export class ProfileFormComponent extends BaseComponent implements OnInit {
       address: [formData.address, Validators.required],
       mobile: [formData.mobile, [Validators.required, Validators.pattern('^[0-9]{10,15}$'), Validators.minLength(11), Validators.maxLength(11)]],
       password: [formData.password],
-      phone: [formData.phone, Validators.required]
+      phone: [formData.phone]
   })
 }
 
