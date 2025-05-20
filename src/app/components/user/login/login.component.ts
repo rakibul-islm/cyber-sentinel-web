@@ -24,7 +24,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(
       success => {
         if (success) {
-          this.notificationService.sendSuccessMsg('Login successful! Redirecting...');
+          this.notificationService.sendSuccessMsg('Login successful.');
           this.router.navigate(['/dashboard']);
         }
       }

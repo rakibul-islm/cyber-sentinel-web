@@ -4,6 +4,8 @@ import { UserService } from '../../services/user/user.service';
 import { Profile } from '../../services/user/domain/user.domain';
 import { BaseComponent } from '../base.component';
 import { AuthService } from '../../services/utility/security/auth.service';
+import { ConfirmationService } from '../../services/utility/confirmation.service';
+import { NotificationService } from '../../services/utility/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -18,6 +20,8 @@ export class AppHeaderComponent extends BaseComponent implements OnInit {
   constructor(
     private authService: AuthService, 
     protected userService: UserService,
+    private confirmationService: ConfirmationService,
+    private notificationService: NotificationService,
     private router: Router) {
     super();
   }
@@ -55,5 +59,13 @@ export class AppHeaderComponent extends BaseComponent implements OnInit {
     this.authService.logout();
     this.fetchProfileData();
     this.router.navigate(['/login']);
+  }
+
+  onLogoutBtnClick() {
+    this.confirmationService.confirm(
+      'You are about to sign out. Continue?',
+      () => {
+        this.logout();
+      })
   }
 }

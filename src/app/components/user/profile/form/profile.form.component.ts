@@ -91,7 +91,7 @@ export class ProfileFormComponent extends BaseComponent implements OnInit {
     };
 
     this.confirmationService.confirm(
-      'Are you sure you want to proceed?',
+      user.password ? "You'll need to sign in with your new password after this. Continue?" : "Are you sure you want to proceed?",
       () => {
         this.updateProfile(user);
       })
