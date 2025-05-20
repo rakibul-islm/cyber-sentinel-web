@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:8041/cyber-sentinel/'
+  baseUrl: 'https://cyber-sentinel-backend-1.onrender.com/cyber-sentinel/'
 };
