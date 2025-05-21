@@ -16,8 +16,8 @@
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center space-x-4">
-      <a routerLink="/dashboard" class="hover:underline">Dashboard</a>
-      <a *ngIf="profile?.fullName" routerLink="/profile" class="hover:underline">{{profile.fullName}}</a>
+      <a routerLink="/dashboard" class="partial-underline">Dashboard</a>
+      <a *ngIf="profile?.fullName" routerLink="/profile" class="partial-underline">{{profile.fullName}}</a>
 
       <!-- Profile Dropdown -->
       <div class="relative group">
@@ -40,9 +40,8 @@
   <!-- Mobile Nav Menu -->
   <div *ngIf="isMenuOpen" class="md:hidden px-4 pb-3">
     <div class="bg-gray-100 text-gray-800 rounded-md p-3 w-full max-w-xs ml-auto space-y-2 shadow-lg">
-      <a routerLink="/dashboard" class="block hover:underline">Dashboard</a>
-      <a *ngIf="profile?.fullName" routerLink="/profile" class="block hover:underline">{{profile.fullName}}</a>
-      <hr class="border-gray-300" />
+      <a *ngIf="profile?.fullName" routerLink="/profile" class="block">{{profile.fullName}}</a>
+      <hr *ngIf="isAuthenticated" class="border-gray-300" />
       <a routerLink="/profile" class="block px-2 py-1 hover:bg-gray-200 rounded">Profile</a>
       <a routerLink="/dashboard" class="block px-2 py-1 hover:bg-gray-200 rounded">Dashboard</a>
       <a *ngIf="!isAuthenticated" routerLink="/login"
