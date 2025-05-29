@@ -37,8 +37,10 @@ export class AuthInterceptor implements HttpInterceptor {
           throw new Error(event?.body?.message);
         }
       }),
-      catchError((error: HttpErrorResponse) => {
-        this.handleError(error);
+      catchError((error) => {
+        if (error instanceof HttpErrorResponse) {
+          this.handleError(error);
+        }
         return throwError(() => error);
       }),
       finalize(() => this.loaderService.hide())
