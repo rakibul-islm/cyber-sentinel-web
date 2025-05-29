@@ -5,8 +5,8 @@ import { AuthService } from '../../../../services/utility/security/auth.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../../../services/user/user.service';
-import { ConfirmationService } from '../../../../services/utility/confirmation.service';
-import { NotificationService } from '../../../../services/utility/notification.service';
+import { ConfirmationService } from '../../../../services/utility/confirmation/confirmation.service';
+import { NotificationService } from '../../../../services/utility/notification/notification.service';
 import { AppHeaderComponent } from '../../../app-header/app.header.component';
 
 @Component({

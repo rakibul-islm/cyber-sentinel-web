@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NotificationService } from '../../../services/utility/notification.service';
+import { NotificationService } from '../../../services/utility/notification/notification.service';
 import { AuthService } from '../../../services/utility/security/auth.service';
 
 @Component({

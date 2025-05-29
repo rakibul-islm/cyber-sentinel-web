@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ConfirmationService } from '../../../services/utility/confirmation.service';
+import { ConfirmationService } from '../../../services/utility/confirmation/confirmation.service';
 
 @Component({
   selector: 'app-confirmation-dialog',

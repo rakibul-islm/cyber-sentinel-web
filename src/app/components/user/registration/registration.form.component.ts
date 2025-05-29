@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NotificationService } from '../../../services/utility/notification.service';
+import { NotificationService } from '../../../services/utility/notification/notification.service';
 import { BaseComponent } from '../../base.component';
 import { Register } from '../../../services/user/domain/user.domain';
 import { UserService } from '../../../services/user/user.service';
-import { ConfirmationService } from '../../../services/utility/confirmation.service';
+import { ConfirmationService } from '../../../services/utility/confirmation/confirmation.service';
 
 @Component({
   selector: 'app-signup',

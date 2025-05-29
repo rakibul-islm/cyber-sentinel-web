@@ -4,8 +4,8 @@ import { UserService } from '../../services/user/user.service';
 import { Profile } from '../../services/user/domain/user.domain';
 import { BaseComponent } from '../base.component';
 import { AuthService } from '../../services/utility/security/auth.service';
-import { ConfirmationService } from '../../services/utility/confirmation.service';
-import { NotificationService } from '../../services/utility/notification.service';
+import { ConfirmationService } from '../../services/utility/confirmation/confirmation.service';
+import { NotificationService } from '../../services/utility/notification/notification.service';
 
 @Component({
   selector: 'app-header',

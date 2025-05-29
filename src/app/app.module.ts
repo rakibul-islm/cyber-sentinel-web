@@ -13,18 +13,20 @@ import { ProfileViewComponent } from './components/user/profile/view/profile.vie
 import { ToastrModule } from 'ngx-toastr';
 import { RegistrationFormComponent } from './components/user/registration/registration.form.component';
 import { ConfirmationDialogComponent } from './components/utility/confirmation-dialog/confirmation.dialog.component';
-import { ConfirmationService } from './services/utility/confirmation.service';
+import { ConfirmationService } from './services/utility/confirmation/confirmation.service';
 import { AuthService } from './services/utility/security/auth.service';
 import { AuthInterceptor } from './services/utility/interceptors/auth.interceptor';
 import { SqlInjectionDetectionComponent } from './components/vulnerability-scanner/sql-injection-detection/sql.injection.detection.component';
 import { CheckPasswordStrengthComponent } from './components/vulnerability-scanner/check-password-strength/check.password.strength.component';
 import { PasswordEncodeDecodeComponent } from './components/vulnerability-scanner/password-encode-decode/password.encode.decode.component';
 import { ProfileFormComponent } from './components/user/profile/form/profile.form.component';
+import { LoaderComponent } from './components/utility/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    LoaderComponent,
     DashboardComponent,
     AppHeaderComponent,
     ProfileViewComponent,
