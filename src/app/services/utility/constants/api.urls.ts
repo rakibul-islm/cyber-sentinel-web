@@ -1,5 +1,6 @@
 export const API_URLS = {
     AUTHENTICATE: 'authenticate/token',
+    GOOGLE_AUTHENTICATE: 'authenticate/token/google',
     FETCH_PROFILE: 'user/profile',
     FETCH_PROFILE_BY_ID: 'user/:id',
     UPDATE_PROFILE: 'user',

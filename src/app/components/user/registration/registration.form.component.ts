@@ -35,10 +35,9 @@ export class RegistrationFormComponent extends BaseComponent implements OnInit {
       fullName: [formData.fullName, Validators.required],
       username: [formData.username, Validators.required],
       email: [formData.email, [Validators.required, Validators.email]],
-      address: [formData.address, Validators.required],
       mobile: [formData.mobile, [Validators.required, Validators.pattern('^[0-9]{10,15}$'), Validators.minLength(11), Validators.maxLength(11)]],
       password: [formData.password, [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['']
     }, { validator: this.passwordMatchValidator });
   }
 

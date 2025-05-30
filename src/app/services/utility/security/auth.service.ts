@@ -33,6 +33,19 @@ export class AuthService {
     );
   }
 
+  googleLogin(idToken: string): Observable<boolean> {
+    return this.http.post<AuthResponse>(API_URLS.GOOGLE_AUTHENTICATE, { token: idToken }).pipe(
+      map(response => {
+        if (response.success && response.obj?.token) {
+          localStorage.setItem('token', response.obj.token);
+          this.isLoggedInSubject.next(true);
+          return true;
+        }
+        return false;
+      })
+    );
+  }
+
   logout(): void {
     localStorage.removeItem('token');
     this.isLoggedInSubject.next(false);
