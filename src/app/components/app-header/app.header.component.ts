@@ -5,7 +5,6 @@ import { Profile } from '../../services/user/domain/user.domain';
 import { BaseComponent } from '../base.component';
 import { AuthService } from '../../services/utility/security/auth.service';
 import { ConfirmationService } from '../../services/utility/confirmation/confirmation.service';
-import { NotificationService } from '../../services/utility/notification/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +20,6 @@ export class AppHeaderComponent extends BaseComponent implements OnInit {
     private authService: AuthService, 
     protected userService: UserService,
     private confirmationService: ConfirmationService,
-    private notificationService: NotificationService,
     private router: Router) {
     super();
   }

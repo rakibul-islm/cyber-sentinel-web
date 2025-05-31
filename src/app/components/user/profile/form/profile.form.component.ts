@@ -72,7 +72,7 @@ export class ProfileFormComponent extends BaseComponent implements OnInit {
   fetchProfileDataById(id: number) {
     if(!id) { return; }
 
-    this.subscribers.fetchProfileDataSub = this.userService.fetchProfileById({id: id})
+    this.subscribers.fetchProfileByIdSub = this.userService.fetchProfileById({id: id})
     .subscribe(data => {
       this.user = data?.obj;
       this.imageBase64 = this.profile.imageBase64;
